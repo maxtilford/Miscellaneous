@@ -19,6 +19,7 @@
 
 # given an array of nodes and an adjacency list, return a maximal array of
 # black nodes
+# We should be using a Red-Black Tree for the list of nodes
 def black_nodes(nodes, adjacency_list)
   blacks = []
   

@@ -12,6 +12,17 @@
 	       (sqrt 5)) 
 	    (/ 1 2))))
 
-(print (fib-by-rounding (read)))
+(define (naive-recursive-fib n)
+  (if (<= n 1) n
+      (+ (naive-recursive-fib (- n 1)) 
+	 (naive-recursive-fib (- n 2)))))
 
+(define (tail-recursive-fib n x y)
+    (if (= 0 n) y
+	(tail-recursive-fib (- n 1) (+ x y) x)))
 
+(let ((n (read)))
+
+  (print (fib-by-rounding n))
+  (print (tail-recursive-fib n 1 0))
+  (print (naive-recursive-fib n)))
